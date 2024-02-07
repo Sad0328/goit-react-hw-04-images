@@ -8,7 +8,7 @@ import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  // Установка начального состояния
+
   const [searchName, setSearchName] = useState(''); 
   const [images, setImages] = useState([]);
   const [currentPage, setCurrentPage] = useState(1); 
@@ -29,12 +29,12 @@ const App = () => {
 
         if (data.hits.length === 0) {
          
-          return toast.info('Sorry image not found', {
-            position: toast.POSITION.TOP_RIGHT,
+          return toast.error('Something went wrong!', {
+            position: 'top-right',
           });
         }
 
-        // Нормализуем полученные изображения
+       
         const normalizedImages = API.normalizedImages(data.hits);
 
         setImages(prevImages => [...prevImages, ...normalizedImages]); 

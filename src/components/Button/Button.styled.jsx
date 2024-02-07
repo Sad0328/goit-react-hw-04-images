@@ -14,3 +14,6 @@ export const ButtonLoad = styled.button`
   color: black;
   background-color: #7d82a4;
 `;
+
+
+
